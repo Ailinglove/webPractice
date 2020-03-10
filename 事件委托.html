@@ -9,6 +9,10 @@
 				height: 40px;
 				background-color: cadetblue;
 			}
+			div{
+				margin: 50px;
+				border:10px solid darkolivegreen;
+			}
 		</style>
 	</head>
 	<body>
@@ -20,12 +24,39 @@
 			<li>4</li>
 			<li>5</li>
 		</ul>
+
+		<div>
+			<div>
+				<div>
+					<div id="inner">最里边一层div哦</div>
+				</div>
+			</div>
+		</div>
+
+
+<!--		通过事件捕获实现事件冒泡-->
 		
 		<script type="text/javascript">
 			var ul=document.getElementById('ul')
-			ul.addEventListener('click',function(e){
+			// ul.addEventListener('click',function(e){
+			// console.log('事件冒泡阶段')
+			// 	console.log(e.target)
+			// })
+			var li=document.getElementsByTagName('li')
+			for(let i=0;i<li.length;i++){
+				li[i].addEventListener('click',function (e) {
+					console.log('事件目标阶段')
+					console.log(li[i])
+				})
+			}
+			ul.addEventListener('click',function (e) {
+				console.log('事件捕获阶段')
 				console.log(e.target)
-			})
+			},false)
+
+		//	当addEventlistener的第三个参数为true时，是先执行ul的点击，在执行li的点击，捕获阶段执行
+		//	当为false,则最后执行，冒泡阶段执行
+
 		</script>
 	</body>
 </html>
