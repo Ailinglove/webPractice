@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>鼠标与滚轮事件</title>
+  <style>
+    div{
+      overflow: scroll;
+      width:500px;
+      height:500px;
+      text-align: center;
+      background-color: darkolivegreen;
+    }
+  </style>
+</head>
+<body>
+<div id="mydiv">按下事件
+<p>
+  var div=document.getElementById("mydiv")
+  div.addEventListener('mousedown',function(){
+  console.log('触发mousedown,鼠标被按下喽！该事件不仅是鼠标左键，鼠标右键点击时也会触发')
+  },false)
+  div.addEventListener('mouseenter',function(){
+  console.log('触发mouseenter,鼠标移入div喽')
+  })
+  div.addEventListener('mouseleave',function(){
+  console.log('触发mouseleave,哎呀，鼠标又跑喽！')
+  })
+  div.addEventListener('mousemove',function(){
+  console.log('触发mousemove,鼠标正在div内乱跑哦。。。')
+  })
+  div.addEventListener('mouseout',function(){
+  console.log('触发mouseout')
+  })
+  div.addEventListener('mouseover',function(){
+  console.log('触发mouseover')
+  })
+  div.addEventListener('click',function(event){
+  console.log('触发click')
+  console.log('此时页面坐标位置的位置:'+event.pageX+','+event.pageY)
+
+  })
+  document.addEventListener('click',function(event){
+
+  console.log('此时鼠标的位置:'+event.clientX+','+event.clientY)
+  console.log('此时页面坐标位置的位置:'+event.pageX+','+event.pageY)
+  })var div=document.getElementById("mydiv")
+  div.addEventListener('mousedown',function(){
+  console.log('触发mousedown,鼠标被按下喽！该事件不仅是鼠标左键，鼠标右键点击时也会触发')
+  },false)
+  div.addEventListener('mouseenter',function(){
+  console.log('触发mouseenter,鼠标移入div喽')
+  })
+  div.addEventListener('mouseleave',function(){
+  console.log('触发mouseleave,哎呀，鼠标又跑喽！')
+  })
+  div.addEventListener('mousemove',function(){
+  console.log('触发mousemove,鼠标正在div内乱跑哦。。。')
+  })
+  div.addEventListener('mouseout',function(){
+  console.log('触发mouseout')
+  })
+  div.addEventListener('mouseover',function(){
+  console.log('触发mouseover')
+  })
+  div.addEventListener('click',function(event){
+  console.log('触发click')
+  console.log('此时页面坐标位置的位置:'+event.pageX+','+event.pageY)
+
+  })
+  document.addEventListener('click',function(event){
+
+  console.log('此时鼠标的位置:'+event.clientX+','+event.clientY)
+  console.log('此时页面坐标位置的位置:'+event.pageX+','+event.pageY)
+  })
+</p>
+</div>
+<input type="text">
+<script>
+  var div=document.getElementById("mydiv")
+  div.addEventListener('mousedown',function(){
+    console.log('触发mousedown,鼠标被按下喽！该事件不仅是鼠标左键，鼠标右键点击时也会触发')
+  },false)
+  div.addEventListener('mouseenter',function(){
+    console.log('触发mouseenter,鼠标移入div喽')
+  })
+  div.addEventListener('mouseleave',function(){
+    console.log('触发mouseleave,哎呀，鼠标又跑喽！')
+  })
+  div.addEventListener('mousemove',function(){
+    console.log('触发mousemove,鼠标正在div内乱跑哦。。。')
+  })
+  div.addEventListener('mouseout',function(){
+    console.log('触发mouseout')
+  })
+  div.addEventListener('mouseover',function(){
+    console.log('触发mouseover')
+  })
+  div.addEventListener('click',function(event){
+    console.log('触发click')
+    console.log('此时页面坐标位置的位置:'+event.pageX+','+event.pageY)
+
+  })
+  document.addEventListener('click',function(event){
+
+    console.log('此时鼠标的位置:'+event.clientX+','+event.clientY)
+    console.log('此时页面坐标位置的位置:'+event.pageX+','+event.pageY)
+    console.log('此时屏幕坐标位置的位置:'+event.screenX+','+event.screenY)
+  })
+
+
+  var input=document.getElementsByTagName("input")[0]
+  input.addEventListener('keydown',function(e){
+    console.log('keydown')
+
+  })
+  input.addEventListener('keypress',function(e){
+    console.log('keypress')
+
+  })
+  input.addEventListener('keyup',function(e){
+    console.log('keyup')
+
+  })
+  input.addEventListener('textInput',function(e){
+    console.log('textInput')
+
+  })
+</script>
+
+</body>
+</html>

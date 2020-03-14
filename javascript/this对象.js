@@ -8,11 +8,9 @@ var name="window"
 var obj={
   name:'obj',
   getName:function(){
+    var that=this
     return function(){
-      console.log(this.name)
-      /**
-       * 注意这段代码如果在node环境下运行时，会输出undefined
-       */
+      console.log(that.name)
     }
   }
 }

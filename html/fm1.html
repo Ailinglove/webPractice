@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div style="border:1px outset darkolivegreen">
+<p></p>
+</div>
+
+<script>
+
+  function getCookie(name){
+    var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+    console.log(arr)
+    if (arr != null) {
+      return (arr[2]);
+    }
+    return null;
+  }
+  function delCookie(name){//为了删除指定名称的cookie，可以将其过期时间设定为一个过去的时间
+    var date = new Date();
+    date.setTime(date.getTime() - 10000);
+    document.cookie = name + "=a; expires=" + date.toGMTString();
+
+  }
+  function setCookie(name,value) {
+    var Days = 365;
+    var exp = new Date();
+    exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+    document.cookie = name + ("=" + (value) + ";expires=" + exp.toGMTString() + ";path=/;");
+    console.log('cookie设置为',document.cookie)
+  }
+  var url=window.location.href;
+  console.log(url)
+  var history=getCookie("his");
+  console.log('历史记录',history)
+  if(history==""||history==null){
+    setCookie("his","http://localhost:63342/test1/html/fm1.html");
+    window.location.href="fm1.html"
+  }else{
+    var index=history.lastIndexOf("/");
+    var cururl=history.substring(index+3,index+4);
+    var cururll=parseInt(cururl);
+    switch(cururll){
+      case 1:
+        setCookie("his","http://localhost:63342/test1/html/fm2.html");
+        window.location.href="fm2.html";
+        break;
+
+      case 2:
+        setCookie("his","http://localhost:63342/test1/html/fm3.html");
+        window.location.href="fm3.html";
+        break;
+      default:
+        delCookie("his");
+        window.location.href="fm.html"
+    }
+
+  }
+</script>
+</body>
+</html>

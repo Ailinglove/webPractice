@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      height: 300px;
+    }
+    .left{
+      background-color: red;
+
+    }
+    .main{
+      background-color: blue;
+    }
+    .right{
+      background-color: darkolivegreen;
+    }
+  </style>
+</head>
+<body>
+<!--浮动布局-->
+<h2>浮动布局</h2>
+<div >
+  <div class="aside" style="width:300px;background-color: red;float:left"></div>
+  <div class="main" style="background-color: blue;margin-left: 300px;"></div>
+</div>
+<h2>浮动布局+负外边距 双飞翼布局两侧</h2>
+<div >
+  <div class="aside" style="width:300px;background-color:red;float:left; margin-right:-100%;">asid</div>
+  <div class="main" style="float:left;width:100%;">
+    <div id="content" style="margin-left:300px;background-color: darkolivegreen">
+      双飞翼布局：都设置float:left，margin-left:-100%，main设置宽度为100%,content设置为margin-left:300px;
+    </div>
+  </div>
+</div>
+
+<h2>绝对定位</h2>
+<div style="position:relative;top:0;">
+  <div class="asid" style="position:absolute;width:300px;background-color:red;left:0;">asid</div>
+  <div class="main" style="background-color: blue;left:300px;">main</div>
+</div>
+<h2>zanding</h2>
+<div >
+  <div class="asid" style="width:300px;background-color:red;float:left;">asid</div>
+  <div class="main" style="background-color: blue;padding-left:300px;">main</div>
+</div>
+
+<h1>三栏布局</h1>
+<h2>绝对定位</h2>
+<div style="position:relative;top:10px;">
+  <div class="left" style="width: 200px;position: absolute;top: 0px;left: 0px;"></div>
+  <div class="main" style="margin-left: 200px;margin-right: 300px;"></div>
+  <div class="right" style="width: 300px;position: absolute;top: 0;right: 0px;"></div>
+</div>
+
+<h2>浮动+负外边距(双飞翼布局)</h2>
+<div style="position:relative;top:10px;">
+  <div class="main" style="width:100%;float: left">
+    <div class="content" style="margin-left: 200px;margin-right: 300px;"></div>
+  </div>
+  <div class="left" style="width: 200px;float: left;margin-left: -100%"></div>
+
+  <div class="right" style="width:300px;float: left;margin-left: -300px;"></div>
+</div>
+
+<h2>圣杯布局，双飞翼布局的前身</h2>
+<div style="padding: 0 300px 0 200px;position: relative">
+  <div class="main" style="width:100%;float: left;"></div>
+  <div class="left" style="width: 200px;float: left;margin-left: -100%;position:relative;left: -200px;"></div>
+
+  <div class="right" style="width:300px;float: left;margin-left: -300px;position:relative;right:-300px"></div>
+</div>
+
+<h2>浮动定位</h2>
+<div >
+  <div class="left" style="width: 200px;float:left;"></div>
+
+  <div class="right" style="width: 300px;float:right;"></div>
+  <div class="main" style="margin-left: 200px;margin-right: 300px;"></div>
+</div>
+
+<h2>flex-box</h2>
+<div style="display: flex;">
+  <div class="left" style="width: 200px;"></div>
+  <div class="main" style="flex: 1"></div>
+  <div class="right" style="width: 300px;"></div>
+
+</div>
+
+
+
+
+</body>
+</html>

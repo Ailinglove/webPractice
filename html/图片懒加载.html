@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+<script>
+  var speed = 50
+  demo2.innerHTML = demo1.innerHTML
+  function Marquee() {
+    if (demo.scrollLeft <= 0) demo.scrollLeft += demo2.offsetWidth
+    else {
+      demo.scrollLeft--
+    }
+  }
+  var MyMar = setInterval(Marquee, speed)
+  demo.onmouseover = function() {
+    clearInterval(MyMar)   //鼠标悬停时，暂停滚动
+  }
+  demo.onmouseout = function() {
+    MyMar = setInterval(Marquee, speed)   //鼠标移开时，开始滚动
+  }
+
+
+
+  var imgs = document.getElementsByClassName('lazyimg')
+  window.onscroll = function () {
+    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+    var winHeight = window.innerHeight;
+    for(var i = 0; i < imgs.length; i++) {
+      if (imgs[i].offsetTop < scrollTop + winHeight) {
+        imgs[i].src = imgs[i].getAttribute('data-src');
+      }
+    }
+  }
+
+
+</script>
+</body>
+</html>
