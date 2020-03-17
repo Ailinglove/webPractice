@@ -3,8 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <style>
+    div{
+      height: 600px;
+    }
+  </style>
 </head>
 <body>
-
+<!--圣杯布局-->
+<div style="padding:0 300px 0 100px;">
+  <div class="main" style="float:left;width:100%;background-color: blue;">123</div>
+  <div class="left" style="margin-left:-100%;float:left;width:100px;background-color: red;position:relative;left:-100px;"></div>
+  <div class="right" style="margin-left:-300px;float:left;width:300px;background-color: darkolivegreen;position:relative;right:-300px;"> </div>
+</div>
+<!--双飞翼布局-->
+<h2>双飞翼布局</h2>
+<div>
+  <div class="main" style="float:left;width:100%;background-color: blue;">
+    <div style="margin:0 300px 0 100px;">123</div>
+  </div>
+  <div class="left" style="margin-left:-100%;float:left;width:100px;background-color: red;"></div>
+  <div class="right" style="margin-left:-300px;float:left;width:300px;background-color: darkolivegreen;"> </div>
+</div>
 </body>
 </html>

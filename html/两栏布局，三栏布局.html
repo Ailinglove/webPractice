@@ -24,7 +24,9 @@
 <h2>浮动布局</h2>
 <div >
   <div class="aside" style="width:300px;background-color: red;float:left"></div>
-  <div class="main" style="background-color: blue;margin-left: 300px;"></div>
+  <div class="main" style="background-color: blue;margin-left: 300px;">
+    左边浮动，右边margin-left:左边的宽度
+  </div>
 </div>
 <h2>浮动布局+负外边距 双飞翼布局两侧</h2>
 <div >
@@ -61,7 +63,6 @@
     <div class="content" style="margin-left: 200px;margin-right: 300px;"></div>
   </div>
   <div class="left" style="width: 200px;float: left;margin-left: -100%"></div>
-
   <div class="right" style="width:300px;float: left;margin-left: -300px;"></div>
 </div>
 
@@ -69,7 +70,6 @@
 <div style="padding: 0 300px 0 200px;position: relative">
   <div class="main" style="width:100%;float: left;"></div>
   <div class="left" style="width: 200px;float: left;margin-left: -100%;position:relative;left: -200px;"></div>
-
   <div class="right" style="width:300px;float: left;margin-left: -300px;position:relative;right:-300px"></div>
 </div>
 

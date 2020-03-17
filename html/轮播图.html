@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    img{
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<img src="" alt="" id="imgdom">
+<div style="width:100px;height:100px;overflow: hidden;">
+  <img src="../imgs/80ab246e2f064f9b9fd6440cd9e94fac.gif" alt="">
+  <img src="../imgs/IMG_20190312_134501.jpg" alt="">
+  <img src="../imgs/IMG_20190502_151125.jpg" alt="">
+</div>
+<script>
+  var index=0
+  var imglist=['../imgs/80ab246e2f064f9b9fd6440cd9e94fac.gif','../imgs/IMG_20190312_134501.jpg','../imgs/IMG_20190502_151125.jpg']
+  window.onload=function(){
+    var list=document.getElementsByTagName('li')
+    var img=document.getElementById("imgdom")
+
+    var timer=setInterval(function(){
+      img.src=imglist[index]
+      console.log(index)
+      index=(index+1)%3
+    },1000)
+  }
+</script>
+</body>
+</html>

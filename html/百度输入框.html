@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text" id="input">
+<input type="button" value="搜索" id="btn">
+<br>
+您搜索的数据是：<span></span>
+
+<script>
+  var input=document.getElementById('input')
+  var btn=document.getElementById('btn')
+
+  var p=document.getElementsByTagName('span')[0]
+  var srr=['北京','上海','天津']
+  var obj={}
+
+  Object.defineProperty(obj,'value',{
+    get() {
+      return input.value
+
+    },
+    set(v) {
+      console.log('diaoyong')
+      p.innerHTML=v
+    }
+  })
+
+  function handler(){
+
+    var search=srr.filter(item=>{
+      return item==obj['value']
+    })
+    obj['value']=search
+    console.log(search)
+
+
+  }
+
+
+
+//  防抖
+
+  function fd(fn,wait=3000){
+    var timer
+
+    return function(){
+      if(timer){
+        clearTimeout(timer)
+      }
+      timer=setTimeout(function(){
+        console.log('调用')
+        fn.apply(this,arguments)
+      },wait)
+
+    }
+  }
+  btn.addEventListener('click',fd(handler,1000))
+
+  // btn.onclick=function(){
+  //   console.log(obj['value']=obj['value'])
+  // }
+
+
+
+</script>
+
+</body>
+</html>
