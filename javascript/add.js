@@ -3,19 +3,20 @@
  * @param a
  * @param b
  */
-function add(a,b){
+function add(a,b="0",c="0"){
    a=a.split("")
    b=b.split("")
+  c=c.split("")
   var res=[]
   var jin=0
-  console.log(a,b)
-  while(a.length>0||b.length>0){
+
+  while(a.length>0||b.length>0||c.length>0){
 
      var aend=a.pop()
     var bend=b.pop()
-    console.log(aend,bend)
-    var sum=~~aend+~~bend
-    console.log(sum)
+    var cend=c.pop()
+    var sum=~~aend+~~bend+~~cend
+
     if(sum>9){
       res.unshift(sum%10)+jin
       jin=parseInt(sum/10)
@@ -25,6 +26,9 @@ function add(a,b){
     }
 
   }
-  console.log(res.join(""))
+  return res.join("")
 }
-add('1111122','1111111111111111111111111111111111111')
+console.log(add('1111122','1111111111111111111111111111111111111'))
+var a=[1,2]
+a.unshift('b')
+console.log(a)

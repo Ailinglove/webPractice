@@ -31,3 +31,12 @@ o2.colors.push('blue')
 console.log(o2.colors)
 o2.sayName()
 o2.sayAge()
+
+
+
+console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++")
+class Person{
+  constructor(name){
+      this.name=name
+  }
+}
