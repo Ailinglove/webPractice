@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <ol>
+    <game-item v-for="item in games" v-bind:game="item"></game-item>
+  </ol>
+  </div>
+<script src="../vue.js"></script>
+<script>
+<!--  定义一个组件-->
+  Vue.component('game-item',{
+    props:['game'],
+    template:'<li>{{game.title}}</li>li>'
+  })
+
+  var vm=new Vue({
+    el:'#app',
+    data:{
+      games:[
+        {title:'斗地主'},
+        {title:'打麻将'},
+        {title:'UNO'}
+      ]
+
+    }
+  })
+</script>
+</body>
+</html>

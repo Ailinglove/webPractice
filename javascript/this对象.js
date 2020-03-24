@@ -28,3 +28,13 @@ var obj1 = {
 console.log(obj1.getName());//my object
 console.log(obj1.getName());//window
 console.log((obj1.getName=obj1.getName)()) ;//window
+
+
+
+let a={}
+let fn=function(){
+  console.log(this)
+}
+fn.bind().bind(a)()  //this指window
+
+// 如果对一个函数多次调用bind,那么函数的this永远由第一次bind决定

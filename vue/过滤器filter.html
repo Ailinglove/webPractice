@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <p>{{message}}</p>
+  <p>{{message | toupper}}</p>
+  <p>现在的vue.js的学习进度是{{num}}----->{{num|topercentage}}</p>
+</div>
+<script src="vue.js"></script>
+<script>
+  var vm=new Vue({
+    el:"#app",
+    data:{
+      message:'hello, welcom to beijing',
+      num:0.3
+    },
+    filters:{
+      toupper(value){
+        return value.toLocaleUpperCase()
+      },
+      topercentage(value){
+        return value*100+'%'
+      }
+    }
+
+  })
+
+</script>
+
+</body>
+</html>

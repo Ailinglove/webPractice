@@ -21,7 +21,6 @@
   Object.defineProperty(obj,'value',{
     get() {
       return input.value
-
     },
     set(v) {
       console.log('diaoyong')
@@ -29,40 +28,40 @@
     }
   })
 
-  function handler(){
-
-    var search=srr.filter(item=>{
-      return item==obj['value']
-    })
-    obj['value']=search
-    console.log(search)
-
-
-  }
+  // function handler(){
+  //
+  //   var search=srr.filter(item=>{
+  //     return item==obj['value']
+  //   })
+  //   obj['value']=search
+  //   console.log(search)
+  //
+  //
+  // }
 
 
 
 //  防抖
 
-  function fd(fn,wait=3000){
-    var timer
-
-    return function(){
-      if(timer){
-        clearTimeout(timer)
-      }
-      timer=setTimeout(function(){
-        console.log('调用')
-        fn.apply(this,arguments)
-      },wait)
-
-    }
-  }
-  btn.addEventListener('click',fd(handler,1000))
-
-  // btn.onclick=function(){
-  //   console.log(obj['value']=obj['value'])
+  // function fd(fn,wait=3000){
+  //   var timer
+  //
+  //   return function(){
+  //     if(timer){
+  //       clearTimeout(timer)
+  //     }
+  //     timer=setTimeout(function(){
+  //       console.log('调用')
+  //       fn.apply(this,arguments)
+  //     },wait)
+  //
+  //   }
   // }
+  // btn.addEventListener('click',fd(handler,1000))
+
+  input.onkeyup=function(){
+    console.log(obj['value']=obj['value'])
+  }
 
 
 

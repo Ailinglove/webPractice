@@ -1,42 +1,67 @@
-function SuperType(name){
+function User(name,age){
   this.name=name
-  this.colors=["red"]
-}
-SuperType.prototype.sayName=function(){
-  console.log(this.name)
-}
-
-function SubType(name,age){
-  // 通过构造函数实现对实例属性的继承
-  SuperType.call(this,name)
   this.age=age
 }
 
-//原型链继承方法
-SubType.prototype=new SuperType()
-SubType.prototype.constructor=SubType
-SubType.prototype.sayAge=function(){
+User.prototype.sayName=function(){
+  console.log(this.name)
+}
+User.prototype.sayAge=function(){
   console.log(this.age)
 }
-var o1=new SubType('ll',23)
-o1.colors.push('black')
 
-console.log(o1.colors)
-o1.sayName()
-o1.sayAge()
+function VipUser(name,age,level){
+  User.call(this,name,age)
+  this.level=level
+}
+VipUser.prototype=new User()
+VipUser.prototype.constructor=VipUser
 
-var o2=new SubType('eee',33)
-o2.colors.push('blue')
+VipUser.prototype.sayLevel=function(){
+  console.log(this.level)
+}
 
-console.log(o2.colors)
-o2.sayName()
-o2.sayAge()
+var g=new User('txr',23)
 
+var vip=new VipUser('ll',24,2)
+
+vip.sayLevel()
+vip.sayAge()
+vip.sayName()
 
 
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++")
 class Person{
-  constructor(name){
-      this.name=name
+  constructor(name,age){
+    this.name=name
+    this.age=age
+  }
+  sayName(){
+    console.log(this.name)
+  }
+  sayAge(){
+    console.log(this.age)
   }
 }
+
+class vipPerson extends Person{
+  constructor(name,age,level){
+    super(name,age)
+    this.level=level
+  }
+  sayLevel(){
+    console.log(this.level)
+  }
+  delaySay(){
+    var _that=this
+    setTimeout(()=>{
+      console.log('delay',_that.name)
+    })
+  }
+}
+
+var pvip=new vipPerson('lll',34,3)
+pvip.sayAge()
+pvip.sayName()
+pvip.delaySay()
+pvip.sayLevel()
